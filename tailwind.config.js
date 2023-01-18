@@ -7,7 +7,7 @@ module.exports = {
         "c-from-scissors-gradient": "hsl(39, 89%, 49%)",
         "c-to-scissors-gradient": "hsl(40, 84%, 53%)",
         "c-from-paper-gradient": "hsl(230, 89%, 62%)",
-        "to-paper-gradient": "hsl(230, 89%, 65%)",
+        "c-to-paper-gradient": "hsl(230, 89%, 65%)",
         "c-from-rock-gradient": "hsl(349, 71%, 52%)",
         "c-to-rock-gradient": "hsl(349, 70%, 56%)",
         "c-from-lizard-gradient": "hsl(261, 73%, 60%)",
@@ -22,6 +22,10 @@ module.exports = {
       },
       fontFamily: {
         sans: ["Barlow Semi Condensed", "sans-serif"],
+      },
+      backgroundImage: {
+        "c-body-radial":
+          "radial-gradient(circle farthest-side at 50% 0%,hsl(214, 47%, 23%),hsl(237, 49%, 15%))",
       },
     },
   },
