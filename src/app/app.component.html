@@ -16,25 +16,104 @@
       </div>
     </section>
     <main class="m-[5%] h-3/6 flex justify-center items-center">
-      <div class="bg-c-triangle bg-contain bg-no-repeat h-48 w-56 relative">
+      <div
+        *ngIf="!userChoice"
+        class="bg-c-triangle bg-contain bg-no-repeat h-48 w-56 relative"
+      >
         <app-choice
           [name]="'paper'"
-          [stylesFrom]="'-top-8 -left-8 bg-c-from-paper-gradient/50'"
-          [stylesTo]="'-top-[5px] -left-0 bg-c-to-paper-gradient/90'"
+          (userChoice)="setUserChoice('paper')"
+          [stylesFrom]="'absolute -top-8 -left-8 bg-c-from-paper-gradient/50'"
+          [stylesTo]="'absolute -top-[5px] -left-0 bg-c-to-paper-gradient/90'"
           ><img src="assets/images/icon-paper.svg" alt="paper"
         /></app-choice>
         <app-choice
           [name]="'scissors'"
-          [stylesFrom]="'-top-8 -right-8 bg-c-from-scissors-gradient/50'"
-          [stylesTo]="'-top-[5px] -left-0 bg-c-to-scissors-gradient/90'"
+          (userChoice)="setUserChoice('scissors')"
+          [stylesFrom]="
+            'absolute -top-8 -right-8 bg-c-from-scissors-gradient/50'
+          "
+          [stylesTo]="
+            'absolute -top-[5px] -left-0 bg-c-to-scissors-gradient/90'
+          "
           ><img src="assets/images/icon-scissors.svg" alt="scissors"
         /></app-choice>
         <app-choice
           [name]="'rock'"
-          [stylesFrom]="'left-[20%] top-[65%] bg-c-from-rock-gradient/50'"
-          [stylesTo]="'-top-[5px] -left-0 bg-c-to-rock-gradient/90'"
+          (userChoice)="setUserChoice('rock')"
+          [stylesFrom]="
+            'absolute left-[20%] top-[65%] bg-c-from-rock-gradient/50'
+          "
+          [stylesTo]="'absolute -top-[5px] -left-0 bg-c-to-rock-gradient/90'"
           ><img src="assets/images/icon-rock.svg" alt="rock"
         /></app-choice>
+      </div>
+      <div
+        *ngIf="userChoice"
+        class="flex justify-between w-full h-full items-center"
+      >
+        <div class="flex flex-col gap-4 items-center">
+          <app-choice
+            *ngIf="userChoice === 'paper'"
+            [name]="'paper'"
+            [stylesFrom]="'relative bg-c-from-paper-gradient/50'"
+            [stylesTo]="'absolute -top-[5px] -left-0 bg-c-to-paper-gradient/90'"
+            ><img src="assets/images/icon-paper.svg" alt="paper"
+          /></app-choice>
+          <app-choice
+            *ngIf="userChoice === 'scissors'"
+            [name]="'scissors'"
+            [stylesFrom]="'relative bg-c-from-scissors-gradient/50'"
+            [stylesTo]="
+              'absolute -top-[5px] -left-0 bg-c-to-scissors-gradient/90'
+            "
+            ><img src="assets/images/icon-scissors.svg" alt="scissors"
+          /></app-choice>
+          <app-choice
+            *ngIf="userChoice === 'rock'"
+            [name]="'rock'"
+            [stylesFrom]="'relative bg-c-from-rock-gradient/50'"
+            [stylesTo]="'absolute -top-[5px] -left-0 bg-c-to-rock-gradient/90'"
+            ><img src="assets/images/icon-rock.svg" alt="rock"
+          /></app-choice>
+          <h2 class="text-white font-semibold">YOU PICKED</h2>
+        </div>
+        <div class="flex flex-col gap-4 items-center justify-between">
+          <div *ngIf="houseChoice">
+            <app-choice
+              *ngIf="userChoice === 'paper'"
+              [name]="'paper'"
+              [stylesFrom]="'relative bg-c-from-paper-gradient/50'"
+              [stylesTo]="
+                'absolute -top-[5px] -left-0 bg-c-to-paper-gradient/90'
+              "
+              ><img src="assets/images/icon-paper.svg" alt="paper"
+            /></app-choice>
+            <app-choice
+              *ngIf="userChoice === 'scissors'"
+              [name]="'scissors'"
+              [stylesFrom]="'relative bg-c-from-scissors-gradient/50'"
+              [stylesTo]="
+                'absolute -top-[5px] -left-0 bg-c-to-scissors-gradient/90'
+              "
+              ><img src="assets/images/icon-scissors.svg" alt="scissors"
+            /></app-choice>
+            <app-choice
+              *ngIf="userChoice === 'rock'"
+              [name]="'rock'"
+              [stylesFrom]="'relative bg-c-from-rock-gradient/50'"
+              [stylesTo]="
+                'absolute -top-[5px] -left-0 bg-c-to-rock-gradient/90'
+              "
+              ><img src="assets/images/icon-rock.svg" alt="rock"
+            /></app-choice>
+          </div>
+          <div
+            *ngIf="!houseChoice"
+            class="mb-3 bg-c-to-radial-gradient/50 h-28 w-28 rounded-full"
+          ></div>
+          <h2 class="text-white font-semibold">THE HOUSE PICKED</h2>
+        </div>
       </div>
     </main>
     <div class="flex justify-center mt-6">
