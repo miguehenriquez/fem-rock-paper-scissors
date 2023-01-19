@@ -26,6 +26,8 @@ module.exports = {
       backgroundImage: {
         "c-body-radial":
           "radial-gradient(circle farthest-side at 50% 0%,hsl(214, 47%, 23%),hsl(237, 49%, 15%))",
+
+        "c-triangle": "url('assets/images/bg-triangle.svg')",
       },
     },
   },
