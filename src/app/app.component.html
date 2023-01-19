@@ -50,7 +50,7 @@
       </div>
       <div
         *ngIf="userChoice"
-        class="flex justify-between w-full h-full items-center"
+        class="flex justify-between w-full h-full mx-2 items-center"
       >
         <div class="flex flex-col gap-4 items-center">
           <app-choice
@@ -81,7 +81,7 @@
         <div class="flex flex-col gap-4 items-center justify-between">
           <div *ngIf="houseChoice">
             <app-choice
-              *ngIf="userChoice === 'paper'"
+              *ngIf="houseChoice === 'paper'"
               [name]="'paper'"
               [stylesFrom]="'relative bg-c-from-paper-gradient/50'"
               [stylesTo]="
@@ -90,7 +90,7 @@
               ><img src="assets/images/icon-paper.svg" alt="paper"
             /></app-choice>
             <app-choice
-              *ngIf="userChoice === 'scissors'"
+              *ngIf="houseChoice === 'scissors'"
               [name]="'scissors'"
               [stylesFrom]="'relative bg-c-from-scissors-gradient/50'"
               [stylesTo]="
@@ -99,7 +99,7 @@
               ><img src="assets/images/icon-scissors.svg" alt="scissors"
             /></app-choice>
             <app-choice
-              *ngIf="userChoice === 'rock'"
+              *ngIf="houseChoice === 'rock'"
               [name]="'rock'"
               [stylesFrom]="'relative bg-c-from-rock-gradient/50'"
               [stylesTo]="

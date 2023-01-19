@@ -10,6 +10,7 @@ export class AppComponent {
   score = 0;
   userChoice = '';
   houseChoice = '';
+  choices = ['rock', 'paper', 'scissors'];
 
   toggleRulesModal() {
     this.showRules = !this.showRules;
@@ -17,6 +18,8 @@ export class AppComponent {
 
   setUserChoice(choice: string) {
     this.userChoice = choice;
-    console.log(this.userChoice);
+    setTimeout(() => {
+      this.houseChoice = this.choices[Math.floor(Math.random() * 3)];
+    }, Math.ceil(Math.random() * 800) + 100);
   }
 }
