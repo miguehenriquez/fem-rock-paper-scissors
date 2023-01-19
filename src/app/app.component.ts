@@ -11,8 +11,8 @@ export class AppComponent {
   readonly PAPER = 'paper';
   readonly SCISSORS = 'scissors';
   readonly ROCK = 'rock';
-  userChoice = '';
-  houseChoice = '';
+  userChoice = this.PAPER;
+  houseChoice = this.SCISSORS;
   choices = [this.ROCK, this.PAPER, this.SCISSORS];
   resultMessage = '';
 
