@@ -1,0 +1,22 @@
+<div
+  (click)="setUserChoice()"
+  class=" {{
+    stylesFrom
+  }} absolute flex justify-center items-center  w-32 h-32 rounded-[100%]"
+>
+  <div
+    class="{{
+      stylesTo
+    }} absolute flex justify-center items-center  w-32 h-32 rounded-[100%]"
+  >
+    <div
+      class="w-[75%] h-[75%] overflow-y-hidden bg-slate-300 rounded-full flex justify-center items-center absolute"
+    >
+      <div
+        class="w-[100%] h-[100%] mt-2 bg-white/80 rounded-full flex justify-center items-center"
+      >
+        <ng-content></ng-content>
+      </div>
+    </div>
+  </div>
+</div>
