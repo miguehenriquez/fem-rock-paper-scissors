@@ -6,4 +6,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'rock-paper-scissors';
+  showRules: boolean = false;
+
+  toggleRulesModal() {
+    this.showRules = !this.showRules;
+    // console.log(this.showRules);
+  }
 }
