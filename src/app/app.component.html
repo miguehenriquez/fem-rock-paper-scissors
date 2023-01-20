@@ -15,7 +15,7 @@
         </h2>
       </div>
     </section>
-    <main class="m-[5%] h-3/6 flex justify-center items-center">
+    <main class="z-20 m-[5%] h-3/6 flex justify-center items-center">
       <div
         *ngIf="!userChoice"
         class="bg-c-triangle bg-contain bg-no-repeat h-48 w-56 relative"
@@ -135,7 +135,14 @@
         </section>
       </div>
     </main>
-
+    <div
+      *ngIf="resultMessage === 'you win'"
+      class="bg-c-winner-gradient z-10 rounded-[100%] w-[65vw] h-[65vw] absolute top-[20%] -left-10"
+    ></div>
+    <div
+      *ngIf="resultMessage === 'you lose'"
+      class="bg-c-winner-gradient z-10 rounded-[100%] w-[65vw] h-[65vw] absolute top-[20%] -right-7"
+    ></div>
     <div class="flex justify-center mt-6">
       <button
         (click)="toggleRulesModal()"

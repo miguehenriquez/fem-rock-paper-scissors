@@ -14,7 +14,7 @@ export class AppComponent {
   userChoice = '';
   houseChoice = '';
   choices = [this.ROCK, this.PAPER, this.SCISSORS];
-  resultMessage = '';
+  resultMessage = ' ';
 
   toggleRulesModal() {
     this.showRules = !this.showRules;
