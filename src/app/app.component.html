@@ -1,4 +1,4 @@
-<div class="flex flex-col h-screen bg-c-body-radial">
+<div class="flex flex-col justify-between h-screen bg-c-body-radial">
   <section
     class="flex justify-between items-center p-3 m-7 border-4 border-c-header-outline rounded-md"
   >
@@ -15,9 +15,8 @@
     </div>
   </section>
   <main class="">
-    <div class="flex justify-center py-[10%]">
+    <div *ngIf="!userChoice" class="flex justify-center py-[10%]">
       <div
-        *ngIf="!userChoice"
         class="bg-c-triangle relative bg-contain bg-no-repeat my-[10%] h-44 w-48"
       >
         <app-choice
@@ -50,4 +49,27 @@
       </div>
     </div>
   </main>
+  <div class="flex my-[12%] justify-center">
+    <button
+      (click)="toggleRulesModal()"
+      class="text-lg px-8 py-1 border-c-header-outline tracking-wider text-slate-200 font-medium rounded-lg border-2"
+    >
+      RULES
+    </button>
+  </div>
+</div>
+<div
+  *ngIf="showRules"
+  class="h-screen transition-all bg-white absolute inset-0 z-10 flex flex-col justify-around items-center"
+>
+  <h3 class="uppercase text-3xl font-bold text-c-dark-text">rules</h3>
+  <img
+    src="assets/images/image-rules.svg"
+    alt="Rules - paper beats rock, rock beats scissors, scissors beat paper"
+  />
+  <img
+    (click)="toggleRulesModal()"
+    src="assets/images/icon-close.svg"
+    alt="close modal"
+  />
 </div>
