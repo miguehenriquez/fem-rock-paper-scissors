@@ -1,5 +1,6 @@
 <div class="flex flex-col justify-between h-screen bg-c-body-radial">
   <section
+    [ngClass]="{ '  z-10 ': userChoice != '' }"
     class="flex justify-between items-center p-3 m-7 border-4 border-c-header-outline rounded-md"
   >
     <img
@@ -136,7 +137,7 @@
         <!-- HOUSE PICK END -->
       </div>
       <div
-        class="bg-c-winner-gradient z-10 rounded-[100%] aspect-square w-[66%] absolute -top-[7%] -left-[8%]"
+        class="bg-c-winner-gradient z-10 rounded-[100%] aspect-square w-[77%] absolute -top-[12%] -left-[14%]"
       ></div>
       <!-- PICKS END -->
       <section
