@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'rock-paper-scissors';
-  showRules: boolean = true;
+  showRules: boolean = false;
   score = 0;
   readonly PAPER = 'paper';
   readonly SCISSORS = 'scissors';
