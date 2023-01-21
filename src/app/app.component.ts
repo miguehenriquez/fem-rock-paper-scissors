@@ -11,10 +11,10 @@ export class AppComponent {
   readonly PAPER = 'paper';
   readonly SCISSORS = 'scissors';
   readonly ROCK = 'rock';
-  userChoice = '';
-  houseChoice = '';
+  userChoice = 'rock';
+  houseChoice = 'scissors';
   choices = [this.ROCK, this.PAPER, this.SCISSORS];
-  resultMessage = '';
+  resultMessage = 'you win';
 
   toggleRulesModal() {
     this.showRules = !this.showRules;
@@ -25,7 +25,7 @@ export class AppComponent {
     // setTimeout(() => {
     this.houseChoice = this.choices[Math.floor(Math.random() * 3)];
     this.resultMessage = this.gameResult(this.userChoice, this.houseChoice);
-    // }, Math.ceil(Math.random() * 800) + 100);
+    // }, Math.ceil(Math.random() * 400) + 100);
   }
 
   reset() {

@@ -14,7 +14,10 @@
       </h2>
     </div>
   </section>
-  <main [ngClass]="{ 'h-3/5': userChoice != '' }" class="">
+  <main
+    [ngClass]="{ 'h-3/5 mx-auto w-[375px] max-h-[381px]  ': userChoice != '' }"
+    class=""
+  >
     <!-- STEP 1 BEGIN -->
     <div *ngIf="!userChoice" class="flex justify-center">
       <div
@@ -51,9 +54,18 @@
     </div>
     <!-- STEP 1 END -->
     <!-- STEP 2 BEGIN  -->
-    <div *ngIf="userChoice" class="h-full flex flex-col justify-around">
+    <div
+      [ngClass]="{ '  w-full ': userChoice != '' }"
+      *ngIf="userChoice"
+      class="h-full z-0 flex flex-col justify-around relative"
+    >
       <!-- PICKS BEGIN -->
-      <div class="flex justify-around">
+      <div
+        [ngClass]="{
+          ' mt-[4%] ': userChoice != ''
+        }"
+        class="flex z-20 justify-around"
+      >
         <!-- USER PICK  BEGIN -->
         <div class="flex flex-col gap-4 items-center">
           <app-choice
@@ -123,6 +135,9 @@
         </div>
         <!-- HOUSE PICK END -->
       </div>
+      <div
+        class="bg-c-winner-gradient z-10 rounded-[100%] aspect-square w-[66%] absolute -top-[7%] -left-[8%]"
+      ></div>
       <!-- PICKS END -->
       <section
         *ngIf="resultMessage != ''"
