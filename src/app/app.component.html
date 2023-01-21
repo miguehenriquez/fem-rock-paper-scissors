@@ -1,29 +1,29 @@
-<div class="relative">
-  <div class="h-screen bg-c-body-radial flex flex-col">
-    <section
-      class="flex justify-between p-3 m-[8%] border-4 border-c-header-outline rounded-lg"
-    >
-      <img
-        class="w-24 h-16 p-2"
-        src="assets/images/logo.svg"
-        alt="Rock paper scissors"
-      />
-      <div class="bg-white rounded-md px-5 py-1 text-center">
-        <h4 class="text-c-score-text font-medium">score</h4>
-        <h2 class="text-c-dark-text leading-7 font-bold text-4xl mb-2">
-          {{ score }}
-        </h2>
-      </div>
-    </section>
-    <main class="z-20 m-[5%] h-3/6 flex justify-center items-center">
+<div class="flex flex-col h-screen bg-c-body-radial">
+  <section
+    class="flex justify-between items-center p-3 m-7 border-4 border-c-header-outline rounded-md"
+  >
+    <img
+      class="w-24 h-16 p-2"
+      src="assets/images/logo.svg"
+      alt="Rock paper scissors"
+    />
+    <div class="bg-white rounded-md px-5 py-1 text-center">
+      <h4 class="text-c-score-text font-medium">score</h4>
+      <h2 class="text-c-dark-text leading-7 font-bold text-4xl mb-2">
+        {{ score }}
+      </h2>
+    </div>
+  </section>
+  <main class="">
+    <div class="flex justify-center py-[10%]">
       <div
         *ngIf="!userChoice"
-        class="bg-c-triangle bg-contain bg-no-repeat h-48 w-56 relative"
+        class="bg-c-triangle relative bg-contain bg-no-repeat my-[10%] h-44 w-48"
       >
         <app-choice
           [name]="'paper'"
           (userChoice)="setUserChoice('paper')"
-          [stylesFrom]="'absolute -top-8 -left-8 bg-c-from-paper-gradient/50'"
+          [stylesFrom]="'absolute -top-14 -left-12 bg-c-from-paper-gradient/50'"
           [stylesTo]="'absolute -top-[5px] -left-0 bg-c-to-paper-gradient/90'"
           ><img src="assets/images/icon-paper.svg" alt="paper"
         /></app-choice>
@@ -31,7 +31,7 @@
           [name]="'scissors'"
           (userChoice)="setUserChoice('scissors')"
           [stylesFrom]="
-            'absolute -top-8 -right-8 bg-c-from-scissors-gradient/50'
+            'absolute -top-14 -right-12 bg-c-from-scissors-gradient/50'
           "
           [stylesTo]="
             'absolute -top-[5px] -left-0 bg-c-to-scissors-gradient/90'
@@ -42,129 +42,12 @@
           [name]="'rock'"
           (userChoice)="setUserChoice('rock')"
           [stylesFrom]="
-            'absolute left-[20%] top-[65%] bg-c-from-rock-gradient/50'
+            'absolute left-[20%] top-[50%] bg-c-from-rock-gradient/50'
           "
           [stylesTo]="'absolute -top-[5px] -left-0 bg-c-to-rock-gradient/90'"
           ><img src="assets/images/icon-rock.svg" alt="rock"
         /></app-choice>
       </div>
-      <div
-        *ngIf="userChoice"
-        class="w-full h-full mx-2 flex flex-col justify-around items-center"
-      >
-        <div class="w-full flex justify-between">
-          <div class="flex flex-col gap-4 items-center">
-            <app-choice
-              *ngIf="userChoice === 'paper'"
-              [name]="'paper'"
-              [stylesFrom]="'relative bg-c-from-paper-gradient/50'"
-              [stylesTo]="
-                'absolute -top-[5px] -left-0 bg-c-to-paper-gradient/90'
-              "
-              ><img src="assets/images/icon-paper.svg" alt="paper"
-            /></app-choice>
-            <app-choice
-              *ngIf="userChoice === 'scissors'"
-              [name]="'scissors'"
-              [stylesFrom]="'relative bg-c-from-scissors-gradient/50'"
-              [stylesTo]="
-                'absolute -top-[5px] -left-0 bg-c-to-scissors-gradient/90'
-              "
-              ><img src="assets/images/icon-scissors.svg" alt="scissors"
-            /></app-choice>
-            <app-choice
-              *ngIf="userChoice === 'rock'"
-              [name]="'rock'"
-              [stylesFrom]="'relative bg-c-from-rock-gradient/50'"
-              [stylesTo]="
-                'absolute -top-[5px] -left-0 bg-c-to-rock-gradient/90'
-              "
-              ><img src="assets/images/icon-rock.svg" alt="rock"
-            /></app-choice>
-            <h2 class="text-white tracking-wider font-semibold">YOU PICKED</h2>
-          </div>
-          <div class="flex flex-col gap-4 items-center justify-between">
-            <div *ngIf="houseChoice">
-              <app-choice
-                *ngIf="houseChoice === 'paper'"
-                [name]="'paper'"
-                [stylesFrom]="'relative bg-c-from-paper-gradient/50'"
-                [stylesTo]="
-                  'absolute -top-[5px] -left-0 bg-c-to-paper-gradient/90'
-                "
-                ><img src="assets/images/icon-paper.svg" alt="paper"
-              /></app-choice>
-              <app-choice
-                *ngIf="houseChoice === 'scissors'"
-                [name]="'scissors'"
-                [stylesFrom]="'relative bg-c-from-scissors-gradient/50'"
-                [stylesTo]="
-                  'absolute -top-[5px] -left-0 bg-c-to-scissors-gradient/90'
-                "
-                ><img src="assets/images/icon-scissors.svg" alt="scissors"
-              /></app-choice>
-              <app-choice
-                *ngIf="houseChoice === 'rock'"
-                [name]="'rock'"
-                [stylesFrom]="'relative bg-c-from-rock-gradient/50'"
-                [stylesTo]="
-                  'absolute -top-[5px] -left-0 bg-c-to-rock-gradient/90'
-                "
-                ><img src="assets/images/icon-rock.svg" alt="rock"
-              /></app-choice>
-            </div>
-            <div
-              *ngIf="!houseChoice"
-              class="mb-3 bg-c-to-radial-gradient/50 h-28 w-28 rounded-full"
-            ></div>
-            <h2 class="text-white tracking-wider font-semibold">
-              THE HOUSE PICKED
-            </h2>
-          </div>
-        </div>
-        <section class="flex flex-col gap-4 justify-center items-center">
-          <h1 class="font-bold tracking-wide text-white text-5xl uppercase">
-            {{ resultMessage }}
-          </h1>
-          <button
-            (click)="reset()"
-            class="text-xl tracking-widest font-medium text-c-dark-text bg-white py-2 px-10 rounded-lg"
-          >
-            PLAY AGAIN
-          </button>
-        </section>
-      </div>
-    </main>
-    <div
-      *ngIf="resultMessage === 'you win'"
-      class="bg-c-winner-gradient z-10 rounded-[100%] w-[65vw] h-[65vw] absolute top-[20%] -left-10"
-    ></div>
-    <div
-      *ngIf="resultMessage === 'you lose'"
-      class="bg-c-winner-gradient z-10 rounded-[100%] w-[65vw] h-[65vw] absolute top-[20%] -right-7"
-    ></div>
-    <div class="flex justify-center mt-6">
-      <button
-        (click)="toggleRulesModal()"
-        class="hover:scale-110 transition border-2 rounded-lg border-white/60 py-1 px-8 text-white font-semibold tracking-widest"
-      >
-        RULES
-      </button>
     </div>
-  </div>
-  <div
-    *ngIf="showRules"
-    class="h-screen transition-all bg-white absolute inset-0 z-10 flex flex-col justify-around items-center"
-  >
-    <h3 class="uppercase text-3xl font-bold text-c-dark-text">rules</h3>
-    <img
-      src="assets/images/image-rules.svg"
-      alt="Rules - paper beats rock, rock beats scissors, scissors beat paper"
-    />
-    <img
-      (click)="toggleRulesModal()"
-      src="assets/images/icon-close.svg"
-      alt="close modal"
-    />
-  </div>
+  </main>
 </div>
