@@ -1,7 +1,7 @@
 <div class="flex flex-col justify-between h-screen bg-c-body-radial">
   <section
     [ngClass]="{ '  z-10 ': userChoice != '' }"
-    class="lg:mx-auto lg:w-1/2 lg:mt-12 flex justify-between items-center p-3 m-7 border-4 border-c-header-outline rounded-md"
+    class="md:mx-auto md:w-1/2 xl:w-2/5 lg:mt-12 flex justify-between items-center p-3 m-7 border-4 border-c-header-outline rounded-md"
   >
     <img
       class="lg:w-32 lg:h-20 w-24 h-16 p-2"
@@ -24,7 +24,7 @@
     <!-- STEP 1 BEGIN -->
     <div *ngIf="!userChoice" class="flex justify-center">
       <div
-        class="lg:scale-125 xl:scale-110 xl:mt-[8%] lg:mt-[15%] bg-c-triangle relative bg-contain bg-no-repeat my-[10%] h-44 w-48"
+        class="lg:scale-125 xl:scale-150 xl:mt-[8%] lg:mt-[15%] bg-c-triangle relative bg-contain bg-no-repeat my-[10%] h-44 w-48"
       >
         <app-choice
           [name]="'paper'"
@@ -176,17 +176,31 @@
   </div>
 </div>
 <div
+  (click)="toggleRulesModal()"
   *ngIf="showRules"
-  class="h-screen transition-all bg-white absolute inset-0 z-10 flex flex-col justify-around items-center"
+  class="h-screen transition-all lg:bg-black/20 bg-white absolute inset-0 z-10 flex flex-col justify-around items-center"
 >
-  <h3 class="uppercase text-3xl font-bold text-c-dark-text">rules</h3>
-  <img
-    src="assets/images/image-rules.svg"
-    alt="Rules - paper beats rock, rock beats scissors, scissors beat paper"
-  />
-  <img
-    (click)="toggleRulesModal()"
-    src="assets/images/icon-close.svg"
-    alt="close modal"
-  />
+  <div
+    class="lg:h-1/2 lg:px-10 lg:py-1 lg:rounded-lg bg-white h-screen flex flex-col items-center justify-around"
+  >
+    <div class="lg:flex lg:justify-between lg:w-full lg:items-center">
+      <h3 class="uppercase text-3xl font-bold text-c-dark-text">rules</h3>
+      <img
+        class="lg:block hidden"
+        (click)="toggleRulesModal()"
+        src="assets/images/icon-close.svg"
+        alt="close modal"
+      />
+    </div>
+    <img
+      src="assets/images/image-rules.svg"
+      alt="Rules - paper beats rock, rock beats scissors, scissors beat paper"
+    />
+    <img
+      class="lg:hidden"
+      (click)="toggleRulesModal()"
+      src="assets/images/icon-close.svg"
+      alt="close modal"
+    />
+  </div>
 </div>
