@@ -11,10 +11,10 @@ export class AppComponent {
   readonly PAPER = 'paper';
   readonly SCISSORS = 'scissors';
   readonly ROCK = 'rock';
-  userChoice = 'rock';
-  houseChoice = 'scissors';
+  userChoice = '';
+  houseChoice = '';
   choices = [this.ROCK, this.PAPER, this.SCISSORS];
-  resultMessage = 'you win';
+  resultMessage = '';
 
   toggleRulesModal() {
     this.showRules = !this.showRules;
