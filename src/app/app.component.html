@@ -1,16 +1,18 @@
 <div class="flex flex-col justify-between h-screen bg-c-body-radial">
   <section
     [ngClass]="{ '  z-10 ': userChoice != '' }"
-    class="flex justify-between items-center p-3 m-7 border-4 border-c-header-outline rounded-md"
+    class="lg:mx-auto lg:w-1/2 lg:mt-12 flex justify-between items-center p-3 m-7 border-4 border-c-header-outline rounded-md"
   >
     <img
-      class="w-24 h-16 p-2"
+      class="lg:w-32 lg:h-20 w-24 h-16 p-2"
       src="assets/images/logo.svg"
       alt="Rock paper scissors"
     />
-    <div class="bg-white rounded-md px-5 py-1 text-center">
-      <h4 class="text-c-score-text font-medium">score</h4>
-      <h2 class="text-c-dark-text leading-7 font-bold text-4xl mb-2">
+    <div class="lg:px-7 bg-white rounded-md px-5 py-1 text-center">
+      <h4 class="lg:text-xl text-c-score-text font-medium">score</h4>
+      <h2
+        class="lg:text-5xl text-c-dark-text leading-7 font-bold text-4xl mb-2"
+      >
         {{ score }}
       </h2>
     </div>
@@ -22,7 +24,7 @@
     <!-- STEP 1 BEGIN -->
     <div *ngIf="!userChoice" class="flex justify-center">
       <div
-        class="bg-c-triangle relative bg-contain bg-no-repeat my-[10%] h-44 w-48"
+        class="lg:scale-125 xl:scale-110 xl:mt-[8%] lg:mt-[15%] bg-c-triangle relative bg-contain bg-no-repeat my-[10%] h-44 w-48"
       >
         <app-choice
           [name]="'paper'"
@@ -162,7 +164,9 @@
     </div>
     <!-- STEP 2, 3, 4 END -->
   </main>
-  <div class="flex my-[12%] justify-center">
+  <div
+    class="lg:justify-end mx-[5%] flex xl:my-[2%] lg:mt[4%] my-[12%] justify-center"
+  >
     <button
       (click)="toggleRulesModal()"
       class="text-lg px-8 py-1 border-c-header-outline tracking-wider text-slate-200 font-medium rounded-lg border-2"
